@@ -8,9 +8,9 @@ class MainPageLocators:
     CONSTRUCTOR_LINK = (By.XPATH, "//p[text()='Конструктор']")
     LOGO = (By.XPATH, "//div[contains(@class,'AppHeader_header__logo')]")
 
-    BUNS_TAB = (By.XPATH, "//span[text()='Булки']")
-    SAUCES_TAB = (By.XPATH, "//span[text()='Соусы']")
-    FILLINGS_TAB = (By.XPATH, "//span[text()='Начинки']")
+    BUNS_TAB = (By.XPATH, "//span[text()='Булки']/parent::div")
+    SAUCES_TAB = (By.XPATH, "//span[text()='Соусы']/parent::div")
+    FILLINGS_TAB = (By.XPATH, "//span[text()='Начинки']/parent::div")
 
     BUNS_HEADING = (By.XPATH, "//h2[text()='Булки']")
     SAUCES_HEADING = (By.XPATH, "//h2[text()='Соусы']")
