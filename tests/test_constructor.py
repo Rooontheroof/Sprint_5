@@ -23,7 +23,7 @@ class TestConstructor:
             )
         )
 
-        buns_tab = wait.until(EC.visibility_of_element_located(MainPageLocators.BUNS_TAB))
+        buns_tab = driver.find_element(*MainPageLocators.BUNS_TAB)
         assert "tab_tab_type_current" in buns_tab.get_attribute("class")
 
 
@@ -41,7 +41,7 @@ class TestConstructor:
             )
         )
 
-        sauces_tab = wait.until(EC.visibility_of_element_located(MainPageLocators.SAUCES_TAB))
+        sauces_tab = driver.find_element(*MainPageLocators.SAUCES_TAB)
         assert "tab_tab_type_current" in sauces_tab.get_attribute("class")
 
 
@@ -58,6 +58,6 @@ class TestConstructor:
                 "tab_tab_type_current"
             )
         )
-        
-        fillings_tab = wait.until(EC.visibility_of_element_located(MainPageLocators.FILLINGS_TAB))
+
+        fillings_tab = driver.find_element(*MainPageLocators.FILLINGS_TAB)
         assert "tab_tab_type_current" in fillings_tab.get_attribute("class")
