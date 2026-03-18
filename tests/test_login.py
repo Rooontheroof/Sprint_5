@@ -24,14 +24,13 @@ class TestLogin:
         ).click()
 
         wait.until(
-            EC.visibility_of_element_located(LoginPageLocators.EMAIL_INPUT)
+            EC.element_to_be_clickable(LoginPageLocators.EMAIL_INPUT)
         ).send_keys(email)
 
         driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
-        wait.until(EC.url_to_be(BASE_URL + "/"))
-        assert driver.current_url == BASE_URL + "/"
+        assert wait.until(EC.url_to_be(BASE_URL + "/"))
 
 
     def test_login_via_personal_account_link(self, driver):
@@ -53,8 +52,7 @@ class TestLogin:
         driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
-        wait.until(EC.url_to_be(BASE_URL + "/"))
-        assert driver.current_url == BASE_URL + "/"
+        assert wait.until(EC.url_to_be(BASE_URL + "/"))
 
 
     def test_login_via_register_page_link(self, driver):
@@ -76,8 +74,7 @@ class TestLogin:
         driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
-        wait.until(EC.url_to_be(BASE_URL + "/"))
-        assert driver.current_url == BASE_URL + "/"
+        assert wait.until(EC.url_to_be(BASE_URL + "/"))
 
 
     def test_login_via_forgot_password_link(self, driver):
@@ -99,5 +96,4 @@ class TestLogin:
         driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
-        wait.until(EC.url_to_be(BASE_URL + "/"))
-        assert driver.current_url == BASE_URL + "/"
+        assert wait.until(EC.url_to_be(BASE_URL + "/"))

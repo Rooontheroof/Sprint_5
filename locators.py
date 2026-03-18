@@ -19,8 +19,8 @@ class MainPageLocators:
 
 class LoginPageLocators:
 
-    EMAIL_INPUT = (By.XPATH, "//fieldset[1]//input")
-    PASSWORD_INPUT = (By.XPATH, "//input[@name='Пароль']")
+    EMAIL_INPUT = (By.XPATH, "//input[@type='text']")
+    PASSWORD_INPUT = (By.XPATH, "//input[@type='password']")
     LOGIN_BUTTON = (By.XPATH, "//button[text()='Войти']")
 
     REGISTER_LINK = (By.XPATH, "//a[@href='/register']")
@@ -29,9 +29,9 @@ class LoginPageLocators:
 
 class RegisterPageLocators:
 
-    NAME_INPUT = (By.XPATH, "//fieldset[1]//input")
-    EMAIL_INPUT = (By.XPATH, "//fieldset[2]//input")
-    PASSWORD_INPUT = (By.XPATH, "//fieldset[3]//input")
+    NAME_INPUT = (By.XPATH, "//input[@name='name']")
+    EMAIL_INPUT = (By.XPATH, "//form//fieldset[2]//input") 
+    PASSWORD_INPUT = (By.XPATH, "//input[@type='password']")
 
     REGISTER_BUTTON = (By.XPATH, "//button[text()='Зарегистрироваться']")
     LOGIN_LINK = (By.XPATH, "//a[@href='/login']")

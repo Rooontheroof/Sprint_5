@@ -9,9 +9,10 @@ from locators import MainPageLocators, ProfilePageLocators
 class TestPersonalAccount:
 
     def test_navigate_to_profile(self, driver):
+        wait = WebDriverWait(driver, 10)
         register_and_login(driver)
 
-        WebDriverWait(driver, 3).until(
+        wait.until(
             EC.element_to_be_clickable(MainPageLocators.PERSONAL_ACCOUNT_LINK)
         ).click()
 
@@ -20,46 +21,49 @@ class TestPersonalAccount:
         )
 
     def test_navigate_to_constructor_via_link(self, driver):
+        wait = WebDriverWait(driver, 10)
         register_and_login(driver)
 
-        WebDriverWait(driver, 3).until(
+        wait.until(
             EC.element_to_be_clickable(MainPageLocators.PERSONAL_ACCOUNT_LINK)
         ).click()
 
-        WebDriverWait(driver, 3).until(
+        wait.until(
             EC.element_to_be_clickable(MainPageLocators.CONSTRUCTOR_LINK)
         ).click()
 
-        assert WebDriverWait(driver, 3).until(
+        assert wait.until(
             EC.url_to_be(BASE_URL + "/")
         )
 
     def test_navigate_to_constructor_via_logo(self, driver):
+        wait = WebDriverWait(driver, 10)
         register_and_login(driver)
 
-        WebDriverWait(driver, 3).until(
+        wait.until(
             EC.element_to_be_clickable(MainPageLocators.PERSONAL_ACCOUNT_LINK)
         ).click()
 
-        WebDriverWait(driver, 3).until(
+        wait.until(
             EC.element_to_be_clickable(MainPageLocators.LOGO)
         ).click()
 
-        assert WebDriverWait(driver, 3).until(
+        assert wait.until(
             EC.url_to_be(BASE_URL + "/")
         )
 
     def test_logout(self, driver):
+        wait = WebDriverWait(driver, 10)
         register_and_login(driver)
 
-        WebDriverWait(driver, 3).until(
+        wait.until(
             EC.element_to_be_clickable(MainPageLocators.PERSONAL_ACCOUNT_LINK)
         ).click()
 
-        WebDriverWait(driver, 3).until(
+        wait.until(
             EC.element_to_be_clickable(ProfilePageLocators.LOGOUT_BUTTON)
         ).click()
 
-        assert WebDriverWait(driver, 3).until(
+        assert wait.until(
             EC.url_contains("/login")
         )

@@ -15,16 +15,13 @@ class TestConstructor:
         wait.until(EC.element_to_be_clickable(MainPageLocators.SAUCES_TAB)).click()
         wait.until(EC.element_to_be_clickable(MainPageLocators.BUNS_TAB)).click()
 
-        wait.until(
+        assert wait.until(
             EC.text_to_be_present_in_element_attribute(
                 MainPageLocators.BUNS_TAB,
                 "class",
                 "tab_tab_type_current"
             )
         )
-
-        buns_tab = driver.find_element(*MainPageLocators.BUNS_TAB)
-        assert "tab_tab_type_current" in buns_tab.get_attribute("class")
 
 
     def test_navigate_to_sauces(self, driver):
@@ -33,16 +30,13 @@ class TestConstructor:
 
         wait.until(EC.element_to_be_clickable(MainPageLocators.SAUCES_TAB)).click()
 
-        wait.until(
+        assert wait.until(
             EC.text_to_be_present_in_element_attribute(
                 MainPageLocators.SAUCES_TAB,
                 "class",
                 "tab_tab_type_current"
             )
         )
-
-        sauces_tab = driver.find_element(*MainPageLocators.SAUCES_TAB)
-        assert "tab_tab_type_current" in sauces_tab.get_attribute("class")
 
 
     def test_navigate_to_fillings(self, driver):
@@ -51,13 +45,10 @@ class TestConstructor:
 
         wait.until(EC.element_to_be_clickable(MainPageLocators.FILLINGS_TAB)).click()
 
-        wait.until(
+        assert wait.until(
             EC.text_to_be_present_in_element_attribute(
                 MainPageLocators.FILLINGS_TAB,
                 "class",
                 "tab_tab_type_current"
             )
         )
-
-        fillings_tab = driver.find_element(*MainPageLocators.FILLINGS_TAB)
-        assert "tab_tab_type_current" in fillings_tab.get_attribute("class")
